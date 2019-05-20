@@ -1,33 +1,29 @@
-
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css">
-  <link rel="stylesheet" href="style.css">
-  <title>Cat Page</title>
-</head>
-<body>
-  <header class="container">
-    <h1>Random Cat Generator</h1>
-  </header>
 
-<div class="buttoncontainer">
-    <button type="button"">Generate</button>
-</div>
+  <head>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css">
+    <link rel="stylesheet" href="style.css">
+    <title>Cat Page</title>
+  </head>
 
-<div class="image_count">
-    <input type="number" name="Number of cat images(1-9)" id ="image_count" value="10" min="1" max="10"><br>
-</div>
+  <body>
+    <header class="container">
+      <h1>Random Cat Generator</h1>
+    </header>
 
-<div class="search_results js-search_results">
-</div>
+    <div class="button_container">
+      <button type="button"">Generate</button>
+    </div>
 
+    <div class="image_count">
+        <input type="number" name="Number of cat images(1-10)" id="image_count" value="10" min="1" max="10"><br>
+    </div>
 
-<div class="images">
+    <div class="images">
+    </div>
 
-</div>
+    <script src="index.js"></script>
+  </body>
 
-<script src="index.js"></script>
-
-</body>
 </html>

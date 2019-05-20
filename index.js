@@ -1,10 +1,10 @@
 "use strict";
 
-const dogApiURL = "https://api.thecatapi.com/v1/images/search"; // copy the correct endpoint URL from https://dog.ceo/dog-api/
+const catApiURL = "https://api.thecatapi.com/v1/images/search"; 
 
 const DOM = {
   resultsContainer: document.querySelector(".images"),
-  searchBtn: document.querySelector(".buttoncontainer"),
+  searchBtn: document.querySelector(".button_container"),
   imageCount: document.querySelector("#image_count")
 }
 
@@ -19,19 +19,14 @@ const resultsModel = {
 };
 
 function getImageCount() {
-  //return document.querySelector('image_count').value;
-  //console.log("kjgkrejgk");
-  //DOM.imageCount.value = 44;
-  //console.log(DOM.imageCount.value);
   return DOM.imageCount.value;
 }
 
 DOM.searchBtn.addEventListener("click", e => {
-  //  let i;
   clearImages();
   let count = getImageCount();
   for (let i = 0; i < count; i++) {
-    fetchData(dogApiURL)
+    fetchData(catApiURL)
       .then(res => {
         (res) ? processResponse(res) : processError();
       });
@@ -47,14 +42,8 @@ function fetchData(url) {
       throw new Error('Network response was not ok.');
     })
     .then(res => {
-      //console.log("RES: " + res);
-      //console.log("RES.url: " + res[0].url);
-      //    (res[0].url) ? processResponse(res[0].url) : processError();
-      //  })
       return res[0].url;
     })
-
-
     .catch(function (error) {
       console.log('There has been a problem with your fetch operation: ', error.message);
       processError();
@@ -63,13 +52,9 @@ function fetchData(url) {
 };
 
 function processResponse(response) {
-  const dog = Object.create(resultsModel);
-  dog.init(response);
-  //  let i;
-  //  for (i = 0; i < 5; i++) {
-  //console.log("test");
+  const cat = Object.create(resultsModel);
+  cat.init(response);
   generateImg(response);
-  //  }
 };
 
 function processError() {
@@ -81,5 +66,5 @@ function clearImages() {
 }
 
 function generateImg(url) {
-  DOM.resultsContainer.innerHTML += `<img src="${url}" alt="Random dog image">`
+  DOM.resultsContainer.innerHTML += `<img src="${url}" alt="Random cat image">`
 };
