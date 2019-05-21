@@ -13,35 +13,9 @@ h1 {
   padding: 10px 20px;
 }
 
-nav {
-  
-  padding: 30px 20px;
-}
-
-a {
-  padding: 30px 20px;
-  color: #fff;
-  text-decoration: none;
-}
-
-a:hover {
-  background-color: #5f5f5f;
-}
 
 img {
   width: 100%;
-}
-
-footer {
-  padding-top: 30px;
-  color: white;
-  text-align: center;
-  height: 100px;
-  background-color: #333;
-}
-
-form {
-  text-align: center;
 }
 
 .container {
@@ -57,14 +31,25 @@ form {
     align-items: center;
   }}
 
-.hallimage {
-  width: 240px;
-  height: 160px;
-  object-fit: cover;
-  margin: 8px;
-  padding: 8px;
+
+.images {
+  display: flex;
+  flex-wrap: wrap;
 }
 
-.hallname {
-  text-align: center;
+.column {
+  flex: 25%;
+  padding: 20px;
+}
+
+@media screen and (max-width: 992px) {
+  .column {
+    flex: 50%;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .images {
+    flex-direction: column;
+  }
 }

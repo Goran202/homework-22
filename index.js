@@ -66,5 +66,5 @@ function clearImages() {
 }
 
 function generateImg(url) {
-  DOM.resultsContainer.innerHTML += `<img src="${url}" alt="Random cat image">`
+  DOM.resultsContainer.innerHTML += `<img src="${url}" class="column" alt="Random cat image">`
 };
